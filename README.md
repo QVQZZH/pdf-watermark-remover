@@ -18,6 +18,10 @@ The project is designed for privacy-sensitive workflows: files are processed loc
 
 The repository includes a synthetic, privacy-safe sample that demonstrates the cleanup flow:
 
+<img src="docs/examples/demo-comparison.png" alt="PDF Clean before and after comparison" width="100%">
+
+- [Before preview PNG](docs/examples/demo-before.png)
+- [After preview PNG](docs/examples/demo-after.png)
 - [Input PDF with demo watermark and signature widget](docs/examples/demo-statement.pdf)
 - [Cleaned PDF output](docs/examples/demo-statement-clean.pdf)
 - [JSON cleanup report](docs/examples/demo-report.json)
