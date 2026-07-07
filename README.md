@@ -14,6 +14,32 @@ PDF Clean is a local-first PDF cleanup utility for text-based business documents
 
 The project is designed for privacy-sensitive workflows: files are processed locally, uploaded PDFs are not included in this repository, and generated outputs are ignored by Git.
 
+## Demo Files
+
+The repository includes a synthetic, privacy-safe sample that demonstrates the cleanup flow:
+
+- [Input PDF with demo watermark and signature widget](docs/examples/demo-statement.pdf)
+- [Cleaned PDF output](docs/examples/demo-statement-clean.pdf)
+- [JSON cleanup report](docs/examples/demo-report.json)
+
+The sample report removes one signature field, one signature widget, and one transparent-text watermark while preserving the text layer:
+
+```json
+{
+  "signature_fields_removed": 1,
+  "signature_widgets_removed": 1,
+  "transparent_text_blocks_removed": 1,
+  "text_length_before": 581,
+  "text_length_after": 566
+}
+```
+
+Regenerate these demo files with:
+
+```bash
+python scripts/create_demo_examples.py
+```
+
 ## Keywords
 
 `PDF signature removal` · `PDF watermark cleanup` · `text PDF cleaner` · `FastAPI PDF tool` · `pypdf signature widget remover` · `PDF AcroForm signature field cleanup` · `local PDF processing`

@@ -16,5 +16,6 @@ server_*.log
 # PDFs and generated processing artifacts may contain sensitive documents.
 *.pdf
 output/
+!docs/examples/*.pdf
 
 .DS_Store

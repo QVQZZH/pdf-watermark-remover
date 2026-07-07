@@ -8,6 +8,7 @@ from pypdf import PdfReader, PdfWriter
 from pypdf.generic import ArrayObject, DictionaryObject, NameObject, NumberObject, RectangleObject, TextStringObject
 
 from app.pdf_tools import analyze_pdf, clean_pdf, write_report
+from scripts.create_demo_examples import CLEAN_PDF, INPUT_PDF, REPORT_JSON, main as create_demo_examples
 
 
 def create_signature_pdf(path: Path) -> None:
@@ -64,6 +65,20 @@ class PdfToolsTest(unittest.TestCase):
 
             reader = PdfReader(str(output_path), strict=False)
             self.assertNotIn("/Annots", reader.pages[0])
+
+    def test_demo_examples_are_regenerated(self) -> None:
+        create_demo_examples()
+        report = analyze_pdf(INPUT_PDF)
+        clean_report = clean_pdf(INPUT_PDF, CLEAN_PDF)
+        write_report(clean_report, REPORT_JSON)
+
+        self.assertEqual(report.pages, 1)
+        self.assertEqual(clean_report.signature_fields_removed, 1)
+        self.assertEqual(clean_report.signature_widgets_removed, 1)
+        self.assertEqual(clean_report.transparent_text_blocks_removed, 1)
+        self.assertTrue(INPUT_PDF.exists())
+        self.assertTrue(CLEAN_PDF.exists())
+        self.assertTrue(REPORT_JSON.exists())
 
 
 if __name__ == "__main__":

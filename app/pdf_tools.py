@@ -420,7 +420,7 @@ def detect_transparent_text_obstructions(page: Any, pdf: PdfReader) -> list[Obst
     if not states:
         return []
     contents = page.get("/Contents")
-    if not contents:
+    if contents is None:
         return []
     try:
         operations = ContentStream(contents, pdf).operations
@@ -492,7 +492,7 @@ def transparent_text_form_invocations(
     if not forms:
         return []
     contents = page.get("/Contents")
-    if not contents:
+    if contents is None:
         return []
 
     try:
@@ -629,7 +629,7 @@ def detect_image_obstructions(page: Any, pdf: PdfReader, text_boxes: list[tuple[
 
     candidates: list[ObstructionCandidate] = []
     contents = page.get("/Contents")
-    if not contents:
+    if contents is None:
         return candidates
 
     stack: list[list[float]] = []
@@ -851,7 +851,7 @@ def _remove_image_xobjects(page: Any, pdf: PdfReader, names_to_remove: set[NameO
         del resources["/XObject"]
 
     contents = page.get("/Contents")
-    if contents:
+    if contents is not None:
         content_stream = ContentStream(contents, pdf)
         content_stream.operations = [
             (operands, operator)
@@ -872,7 +872,7 @@ def _transparent_text_block_ranges(page: Any, pdf: PdfReader) -> list[tuple[int,
     if not states:
         return []
     contents = page.get("/Contents")
-    if not contents:
+    if contents is None:
         return []
     try:
         operations = ContentStream(contents, pdf).operations
@@ -915,7 +915,7 @@ def _transparent_text_block_ranges(page: Any, pdf: PdfReader) -> list[tuple[int,
 
 def _remove_transparent_text_blocks(page: Any, pdf: PdfReader) -> int:
     contents = page.get("/Contents")
-    if not contents:
+    if contents is None:
         return 0
     try:
         content_stream = ContentStream(contents, pdf)
@@ -940,7 +940,7 @@ def _remove_transparent_text_form_invocations(
     page: Any, pdf: PdfReader, text_boxes: list[tuple[Rect, int]]
 ) -> int:
     contents = page.get("/Contents")
-    if not contents:
+    if contents is None:
         return 0
     try:
         content_stream = ContentStream(contents, pdf)
