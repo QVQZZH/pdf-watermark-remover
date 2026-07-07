@@ -18,7 +18,7 @@ The project is designed for privacy-sensitive workflows: files are processed loc
 
 The repository includes a synthetic, privacy-safe sample that demonstrates the cleanup flow:
 
-![PDF Watermark Remover before and after comparison](docs/examples/demo-comparison.png?raw=1)
+![PDF Watermark Remover before and after comparison](https://raw.githubusercontent.com/QVQZZH/pdf-watermark-remover/main/docs/examples/demo-comparison.png)
 
 - [Before preview PNG](docs/examples/demo-before.png)
 - [After preview PNG](docs/examples/demo-after.png)
