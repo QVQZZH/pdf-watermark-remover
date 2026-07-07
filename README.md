@@ -14,11 +14,11 @@ PDF Watermark Remover is a local-first tool for cleaning text-based business doc
 
 The project is designed for privacy-sensitive workflows: files are processed locally, uploaded PDFs are not included in this repository, and generated outputs are ignored by Git.
 
+![PDF Watermark Remover before and after comparison](https://raw.githubusercontent.com/QVQZZH/pdf-watermark-remover/main/docs/examples/demo-comparison.png)
+
 ## Demo Files
 
 The repository includes a synthetic, privacy-safe sample that demonstrates the cleanup flow:
-
-![PDF Watermark Remover before and after comparison](https://raw.githubusercontent.com/QVQZZH/pdf-watermark-remover/main/docs/examples/demo-comparison.png)
 
 - [Before preview PNG](docs/examples/demo-before.png)
 - [After preview PNG](docs/examples/demo-after.png)
