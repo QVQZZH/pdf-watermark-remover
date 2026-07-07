@@ -1,6 +1,6 @@
 {
-  "input": "/home/github_QVQZZH/projects/pdf-clean/docs/examples/demo-statement.pdf",
-  "output": "/home/github_QVQZZH/projects/pdf-clean/docs/examples/demo-statement-clean.pdf",
+  "input": "docs/examples/demo-statement.pdf",
+  "output": "docs/examples/demo-statement-clean.pdf",
   "pages": 1,
   "encrypted": false,
   "text_length_before": 581,

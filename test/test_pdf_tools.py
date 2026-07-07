@@ -70,7 +70,6 @@ class PdfToolsTest(unittest.TestCase):
         create_demo_examples()
         report = analyze_pdf(INPUT_PDF)
         clean_report = clean_pdf(INPUT_PDF, CLEAN_PDF)
-        write_report(clean_report, REPORT_JSON)
 
         self.assertEqual(report.pages, 1)
         self.assertEqual(clean_report.signature_fields_removed, 1)
