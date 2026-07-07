@@ -90,7 +90,7 @@ def create_demo_pdf(path: Path) -> None:
         "q",
         "0.96 0.97 0.98 rg 0 0 612 792 re f",
         "Q",
-        text_line(72, 724, 18, "PDF Clean Demo Statement"),
+        text_line(72, 724, 18, "Demo Statement"),
         text_line(72, 696, 10, "Generated sample document - no real account data."),
         "0.12 0.15 0.18 rg",
     ]
@@ -142,9 +142,9 @@ def create_demo_pdf(path: Path) -> None:
     )
     writer.add_metadata(
         {
-            "/Title": "PDF Clean Demo Statement",
-            "/Subject": "Synthetic sample for PDF Clean",
-            "/Creator": "PDF Clean",
+            "/Title": "PDF Watermark Remover Demo Statement",
+            "/Subject": "Synthetic sample for PDF Watermark Remover",
+            "/Creator": "PDF Watermark Remover",
         }
     )
 
@@ -176,7 +176,7 @@ def create_preview_png(path: Path, *, cleaned: bool) -> None:
     watermark_font = ImageFont.truetype("DejaVuSans-Bold.ttf", 48 * scale)
 
     draw.rectangle(box((44, 44, 568, 748)), fill="#ffffff", outline="#d8dde3", width=2 * scale)
-    draw.text(xy(72, 82), "PDF Clean Demo Statement", fill="#151719", font=title_font)
+    draw.text(xy(72, 82), "Demo Statement", fill="#151719", font=title_font)
     draw.text(xy(72, 122), "Generated sample document - no real account data.", fill="#66707a", font=small_font)
 
     columns = [72, 172, 344, 420, 500]
@@ -230,7 +230,7 @@ def create_comparison_png() -> None:
     draw = ImageDraw.Draw(canvas)
     title_font = ImageFont.truetype("DejaVuSans-Bold.ttf", 24)
     label_font = ImageFont.truetype("DejaVuSans-Bold.ttf", 16)
-    draw.text((margin, 22), "PDF Clean: before and after", fill="#151719", font=title_font)
+    draw.text((margin, 22), "PDF Watermark Remover: before and after", fill="#151719", font=title_font)
     left_x = margin
     right_x = margin + before.width + gap
     top = margin + title_height

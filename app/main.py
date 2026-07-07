@@ -19,7 +19,7 @@ OUTPUT_DIR = ROOT / "output"
 PREVIEW_DIR = OUTPUT_DIR / "previews"
 PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
 
-app = FastAPI(title="PDF Clean", version="0.1.0")
+app = FastAPI(title="PDF Watermark Remover", version="0.1.0")
 app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
 app.mount("/previews", StaticFiles(directory=PREVIEW_DIR), name="previews")
 

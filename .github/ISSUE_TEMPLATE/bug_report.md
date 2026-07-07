@@ -26,4 +26,4 @@ assignees: ""
 
 - OS:
 - Python version:
-- PDF Clean commit:
+- PDF Watermark Remover commit:

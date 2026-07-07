@@ -1,16 +1,16 @@
-# PDF Clean
+# PDF Watermark Remover
 
-[![CI](https://github.com/QVQZZH/pdf-clean/actions/workflows/ci.yml/badge.svg)](https://github.com/QVQZZH/pdf-clean/actions/workflows/ci.yml)
+[![CI](https://github.com/QVQZZH/pdf-watermark-remover/actions/workflows/ci.yml/badge.svg)](https://github.com/QVQZZH/pdf-watermark-remover/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white&style=flat-square)](https://www.python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-ready-009688?logo=fastapi&logoColor=white&style=flat-square)](https://fastapi.tiangolo.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/QVQZZH/pdf-clean/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/QVQZZH/pdf-watermark-remover/pulls)
 
 [Quick Start](#quick-start) · [Features](#features) · [CLI](#cli) · [API](#api) · [Limits](#current-limits) · [Roadmap](#roadmap) · **English** | [中文](README.zh-CN.md)
 
-**Clean signature widgets, signature fields, transparent watermarks, and selected visual obstructions from text-based PDFs while preserving the original text layer whenever possible.**
+**Remove watermarks, signature widgets, stamp-like overlays, and visual obstructions from text-based PDFs while preserving the original text layer whenever possible.**
 
-PDF Clean is a local-first PDF cleanup utility for text-based business documents, statements, forms, and records. It rewrites PDFs with `pypdf`, removes common digital signature artifacts, detects likely image or transparent-text obstructions over text, and provides both a command-line interface and a small FastAPI web UI.
+PDF Watermark Remover is a local-first tool for cleaning text-based business documents, statements, forms, and records. It rewrites PDFs with `pypdf`, removes common digital signature artifacts, detects image or transparent-text overlays over text, and provides both a command-line interface and a small FastAPI web UI.
 
 The project is designed for privacy-sensitive workflows: files are processed locally, uploaded PDFs are not included in this repository, and generated outputs are ignored by Git.
 
@@ -18,7 +18,7 @@ The project is designed for privacy-sensitive workflows: files are processed loc
 
 The repository includes a synthetic, privacy-safe sample that demonstrates the cleanup flow:
 
-<img src="docs/examples/demo-comparison.png" alt="PDF Clean before and after comparison" width="100%">
+![PDF Watermark Remover before and after comparison](docs/examples/demo-comparison.png?raw=1)
 
 - [Before preview PNG](docs/examples/demo-before.png)
 - [After preview PNG](docs/examples/demo-after.png)
@@ -217,7 +217,7 @@ python -m uvicorn app.main:app --reload
 
 ## FAQ
 
-### Does PDF Clean upload files to a remote service?
+### Does PDF Watermark Remover upload files to a remote service?
 
 No. The app runs locally. Uploaded files go to the local FastAPI process, and generated outputs are written under `output/`.
 
@@ -227,7 +227,7 @@ It can rewrite scanned PDFs, but it does not perform OCR. The strongest results 
 
 ### Can it remove all watermarks?
 
-No. PDF watermark implementations vary. PDF Clean handles signature structures, some image overlays, and low-transparency text or Form XObject watermarks. Manual whiteout can be used as a fallback.
+No. PDF watermark implementations vary. PDF Watermark Remover handles signature structures, some image overlays, and low-transparency text or Form XObject watermarks. Manual whiteout can be used as a fallback.
 
 ### Is it safe to use on original files?
 
