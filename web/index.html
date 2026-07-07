@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Clean</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <div class="header">
+          <div>
+            <p class="eyebrow">PDF Clean</p>
+            <h1>文字版 PDF 签名与水印清理</h1>
+          </div>
+          <span class="badge">保留文本层</span>
+        </div>
+
+        <label class="dropzone" id="dropzone">
+          <input id="fileInput" type="file" accept="application/pdf" />
+          <span class="icon">PDF</span>
+          <strong>选择或拖入流水明细 PDF</strong>
+          <small>默认检测并移除覆盖文字层的签名、印章、水印和图片遮挡。</small>
+        </label>
+
+        <label class="option-row">
+          <input id="removeImagesInput" type="checkbox" />
+          <span>
+            <strong>强力图片层清理</strong>
+            <small>兜底删除所有图片对象；可能同时移除 logo、页眉图片或扫描底图。</small>
+          </span>
+        </label>
+
+        <div class="actions">
+          <button id="analyzeBtn" type="button">分析 PDF</button>
+          <button id="cleanBtn" type="button" class="primary">清理并下载</button>
+        </div>
+
+        <pre id="log" class="log">等待选择文件。</pre>
+        <div id="previews" class="previews" hidden></div>
+      </section>
+    </main>
+    <script type="module" src="/static/script.js"></script>
+  </body>
+</html>
